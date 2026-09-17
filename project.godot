@@ -14,6 +14,10 @@ config/name="Final Facugodot"
 run/main_scene="uid://chyqah5p03hxx"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
+[autoload]
+
+Globales="*uid://bqcrummwi7kkn"
+
 [display]
 
 window/size/viewport_width=1280

@@ -4,3 +4,4 @@ extends Node2D
 func _on_puerta_body_entered(body):
 	if not body is Player: return
 	get_tree().change_scene_to_packed(nivel_1)
+	
