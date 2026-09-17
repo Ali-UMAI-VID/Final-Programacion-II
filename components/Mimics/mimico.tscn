@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dbgq64qub3ysk"]
+
+[ext_resource type="Texture2D" uid="uid://yjludpmvl8v1" path="res://assets/textures/Mimic/Bicho.png" id="1_hdu6y"]
+[ext_resource type="Texture2D" uid="uid://dd6436o5cdk6x" path="res://assets/textures/Mimic/Herradura.png" id="2_6f6h4"]
+[ext_resource type="Texture2D" uid="uid://dyebonge3niyd" path="res://assets/textures/Mimic/Paja chica.png" id="3_jlrtd"]
+[ext_resource type="Texture2D" uid="uid://bjatsxof84i4a" path="res://assets/textures/Mimic/Yunque.png" id="4_w4gr6"]
+[ext_resource type="Texture2D" uid="uid://bwdq0scqny0f4" path="res://assets/textures/Mimic/Paja grande.png" id="5_jg3mf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vpy8e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hdu6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6f6h4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jlrtd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_w4gr6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jg3mf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vq16u"]
+radius = 15.0
+
+[node name="Mimico" type="CharacterBody2D" unique_id=338782264]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=762316541]
+sprite_frames = SubResource("SpriteFrames_vpy8e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=283617074]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_vq16u")

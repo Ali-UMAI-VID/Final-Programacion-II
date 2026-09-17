@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://xyjxlbtyrcjd"]
+
+[ext_resource type="Script" uid="uid://dj8na7bcmf2bc" path="res://components/player/Scripts/player_class.gd" id="1_l4t1l"]
+[ext_resource type="Texture2D" uid="uid://b2xlqu31qovxx" path="res://assets/textures/Player/Sprites/Movimiento/Pj de costado.png" id="2_3dhl7"]
+[ext_resource type="Texture2D" uid="uid://3g6m7gryur5k" path="res://assets/textures/Player/Sprites/Movimiento/Pj de espalda.png" id="3_msx8h"]
+[ext_resource type="Texture2D" uid="uid://c1i5b2j3te6io" path="res://assets/textures/Player/Sprites/Movimiento/Pj de frente.png" id="4_pmwgv"]
+[ext_resource type="Script" uid="uid://cmg82cj5dg2je" path="res://components/player/Scripts/maquina_estados.gd" id="12_wt3mh"]
+[ext_resource type="Script" uid="uid://th3wjdy7ypmn" path="res://components/player/Scripts/estado_normal.gd" id="13_wt3mh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vq16u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3dhl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_msx8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pmwgv")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vq16u"]
+radius = 6.0
+height = 38.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vpy8e"]
+radius = 120.06665
+
+[node name="Player" type="CharacterBody2D" unique_id=113463032 node_paths=PackedStringArray("sprite")]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_l4t1l")
+sprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1650606929]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_vq16u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=126879551]
+scale = Vector2(5, 5)
+shape = SubResource("CapsuleShape2D_vq16u")
+
+[node name="MaquinaEstado" type="Node" parent="." unique_id=1827042357 node_paths=PackedStringArray("estado_inicial")]
+script = ExtResource("12_wt3mh")
+estado_inicial = NodePath("EstadoNormal")
+
+[node name="EstadoNormal" type="Node" parent="MaquinaEstado" unique_id=2027359024]
+script = ExtResource("13_wt3mh")
+
+[node name="EstadoAtaque" type="Node" parent="MaquinaEstado" unique_id=206817894]
+
+[node name="EstadoMuerte" type="Node" parent="MaquinaEstado" unique_id=1479154454]
+
+[node name="AreaEspada" type="Area2D" parent="." unique_id=977036717]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaEspada" unique_id=1839350439]
+position = Vector2(92, 0)
+shape = SubResource("CircleShape2D_vpy8e")
