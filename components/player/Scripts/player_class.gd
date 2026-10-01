@@ -18,19 +18,17 @@ func _physics_process(delta):
 		velocity = direction * velocidad
 
 		if direction.x < 0:
-			sprite.frame = 0
+			#sprite.play("caminando")
 			sprite.flip_h = true
 		elif direction.x > 0:
-			sprite.frame = 0
+			#sprite.play("caminando")
 			sprite.flip_h = false
-		if direction.y < 0:
-			sprite.frame = 1
-		elif direction.y > 0:
-			sprite.frame = 2
-
+		#if direction.y < 0:
+		#	sprite.play("caminando")
+		#elif direction.y > 0:
+		#	sprite.play("caminando")
 		maquina.estado.proceso(delta)
-
 	else:
 		velocity = Vector2.ZERO
-	print(direction.y)
+	#print(direction.y)
 	move_and_slide()
