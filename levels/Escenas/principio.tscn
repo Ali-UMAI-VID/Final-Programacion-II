@@ -2173,6 +2173,10 @@ speed = 500.0
 
 [node name="Camera2D2" type="Camera2D" parent="Player" unique_id=1903374681]
 zoom = Vector2(3, 3)
+limit_left = 0
+limit_top = 0
+limit_right = 1626
+limit_bottom = 810
 
 [node name="Puerta" type="Area2D" parent="." unique_id=128490711]
 position = Vector2(577, 57)
