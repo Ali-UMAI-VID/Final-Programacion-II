@@ -1,9 +1,9 @@
 extends Node
 class_name MaquinaEstado
 
-@onready var jugador : Player = get_parent()
 @export var estado_inicial : Estado
 @onready var estado : Estado = estado_inicial
+@onready var player : Player = get_parent()
 
 func transcicionar(nombre_estado : String):
 	var nuevo_estado : Estado = get_node(nombre_estado)

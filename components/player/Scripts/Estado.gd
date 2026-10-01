@@ -2,7 +2,7 @@ extends Node
 class_name Estado
 
 @onready var maquina : MaquinaEstado = get_parent()
-@onready var jugador : Player = get_parent().get_parent()
+
 
 func entrada():
 	pass
