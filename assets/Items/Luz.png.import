@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ywishfuwvfsi"
-path="res://.godot/imported/Velas apagadas.png-d42f5368632e93acd6087f5dfde6e424.ctex"
+uid="uid://ya5t5734mjx2"
+path="res://.godot/imported/Luz.png-9f2f53e9946fe37a435e251a7365ff15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Fondo/Items/Velas apagadas.png"
-dest_files=["res://.godot/imported/Velas apagadas.png-d42f5368632e93acd6087f5dfde6e424.ctex"]
+source_file="res://assets/Items/Luz.png"
+dest_files=["res://.godot/imported/Luz.png-9f2f53e9946fe37a435e251a7365ff15.ctex"]
 
 [params]
 

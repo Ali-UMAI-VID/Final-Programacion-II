@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqcafscl65chj"
-path="res://.godot/imported/Velas encendidas.png-ac4e5b7e42ff70254ef0f57f9218958d.ctex"
+path="res://.godot/imported/Velas encendidas.png-74b1d464d7e26e5195fe9264c439fcb8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Fondo/Items/Velas encendidas.png"
-dest_files=["res://.godot/imported/Velas encendidas.png-ac4e5b7e42ff70254ef0f57f9218958d.ctex"]
+source_file="res://assets/Items/Velas encendidas.png"
+dest_files=["res://.godot/imported/Velas encendidas.png-74b1d464d7e26e5195fe9264c439fcb8.ctex"]
 
 [params]
 

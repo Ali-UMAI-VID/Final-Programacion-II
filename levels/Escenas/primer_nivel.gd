@@ -9,6 +9,7 @@ var ene_principio = false
 func _ready():
 	ene_principio = true
 	await animacion_sala_luz.animation_finished
+	Globales.apagar_luz_sala = false
 	camera_sala_jug.reparent(jugador)
 	camera_sala_jug.position.x = 0
 	camera_sala_jug.position.y = 0
