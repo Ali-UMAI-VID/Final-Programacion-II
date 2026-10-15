@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://0iia2n2c8uca"]
 
-[ext_resource type="Texture2D" uid="uid://ya5t5734mjx2" path="res://assets/Items/Luz.png" id="1_n3tan"]
-[ext_resource type="Script" uid="uid://dkrv7h0uhj6ny" path="res://components/Objetos/velas.gd" id="1_nnpdg"]
-[ext_resource type="Texture2D" uid="uid://bla3t4cvsr17j" path="res://assets/Items/Pilar madera.png" id="2_nnpdg"]
-[ext_resource type="Texture2D" uid="uid://bqcafscl65chj" path="res://assets/Items/Velas encendidas.png" id="3_2amtb"]
-[ext_resource type="Texture2D" uid="uid://ywishfuwvfsi" path="res://assets/Items/Velas apagadas.png" id="4_04q4k"]
+[ext_resource type="Texture2D" uid="uid://ya5t5734mjx2" path="res://assets/items/niveles/Luz.png" id="1_n3tan"]
+[ext_resource type="Script" uid="uid://dkrv7h0uhj6ny" path="res://components/objetos/velas.gd" id="1_nnpdg"]
+[ext_resource type="Texture2D" uid="uid://bla3t4cvsr17j" path="res://assets/items/niveles/Pilar madera.png" id="2_nnpdg"]
+[ext_resource type="Texture2D" uid="uid://bqcafscl65chj" path="res://assets/items/niveles/Velas encendidas.png" id="3_2amtb"]
+[ext_resource type="Texture2D" uid="uid://ywishfuwvfsi" path="res://assets/items/niveles/Velas apagadas.png" id="4_04q4k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vq16u"]
-size = Vector2(43, 89)
+size = Vector2(43, 80)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a361v"]
 animations = [{
@@ -29,7 +29,7 @@ collision_mask = 3
 script = ExtResource("1_nnpdg")
 
 [node name="CollisionVela" type="CollisionShape2D" parent="." unique_id=2081842463]
-position = Vector2(0.5, 25.5)
+position = Vector2(0.5, 30)
 shape = SubResource("RectangleShape2D_vq16u")
 
 [node name="Punto de luz" type="PointLight2D" parent="." unique_id=526681638]
@@ -43,5 +43,6 @@ rotation = 3.1415925
 texture = ExtResource("2_nnpdg")
 
 [node name="Velas" type="AnimatedSprite2D" parent="." unique_id=814204114]
+position = Vector2(0, 9)
 sprite_frames = SubResource("SpriteFrames_a361v")
 animation = &"Luz"

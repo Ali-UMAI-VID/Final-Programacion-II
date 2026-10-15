@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://caxie6kiu5up3"]
+
+[ext_resource type="Script" uid="uid://cxk8e6qe41682" path="res://components/objetos/objetos_posta.gd" id="1_f6gi3"]
+[ext_resource type="Texture2D" uid="uid://dd6436o5cdk6x" path="res://assets/items/niveles/Herradura.png" id="1_x6grd"]
+[ext_resource type="Texture2D" uid="uid://dyebonge3niyd" path="res://assets/items/niveles/Paja chica.png" id="2_f6gi3"]
+[ext_resource type="Texture2D" uid="uid://bwdq0scqny0f4" path="res://assets/items/niveles/Paja grande.png" id="3_oulb8"]
+[ext_resource type="Texture2D" uid="uid://bjatsxof84i4a" path="res://assets/items/niveles/Yunque.png" id="4_va73i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vpy8e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_oulb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_f6gi3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_x6grd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_va73i")
+}],
+"loop": 1,
+"name": &"Tipos_objetos_1",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpy8e"]
+size = Vector2(44, 44)
+
+[node name="Objetos_posta" type="Area2D" unique_id=1509260846 groups=["Objetos"]]
+script = ExtResource("1_f6gi3")
+
+[node name="Frames_objetos" type="AnimatedSprite2D" parent="." unique_id=500398021]
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_vpy8e")
+animation = &"Tipos_objetos_1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=484750140]
+shape = SubResource("RectangleShape2D_vpy8e")
