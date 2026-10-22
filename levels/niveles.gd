@@ -4,7 +4,7 @@ extends Node2D
 @onready var jugador = $Jugador
 
 @onready var mimico = $Mimico
-@export var velo_mimico = 200
+@export var velo_mimico = 150
 var ene_principio = false
 func _ready():
 	Globales.apagar_luz_sala = true
