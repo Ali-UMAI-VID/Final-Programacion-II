@@ -1,18 +1,158 @@
 [gd_scene format=3 uid="uid://dbgq64qub3ysk"]
 
 [ext_resource type="Script" uid="uid://bgssq53wriuai" path="res://components/mimico/mimico.gd" id="1_6f6h4"]
-[ext_resource type="Texture2D" uid="uid://yjludpmvl8v1" path="res://assets/mimico/Bicho.png" id="1_hdu6y"]
 [ext_resource type="Texture2D" uid="uid://dd6436o5cdk6x" path="res://assets/items/niveles/Herradura.png" id="2_6f6h4"]
 [ext_resource type="Texture2D" uid="uid://dyebonge3niyd" path="res://assets/items/niveles/Paja chica.png" id="3_jlrtd"]
 [ext_resource type="Texture2D" uid="uid://bjatsxof84i4a" path="res://assets/items/niveles/Yunque.png" id="4_w4gr6"]
 [ext_resource type="Texture2D" uid="uid://bwdq0scqny0f4" path="res://assets/items/niveles/Paja grande.png" id="5_jg3mf"]
+[ext_resource type="Texture2D" uid="uid://dki4gae5ogekk" path="res://assets/mimico/Ataca/Orc_Attack01.png" id="7_oek3q"]
+[ext_resource type="Texture2D" uid="uid://bemklmes7rxnf" path="res://assets/mimico/Camina/Orc_Walk.png" id="8_uh0fs"]
+[ext_resource type="Texture2D" uid="uid://ckmhdbehfpf77" path="res://assets/mimico/Muere/Orc_Death.png" id="9_yjseg"]
+[ext_resource type="Texture2D" uid="uid://dhobssjsrxqfl" path="res://assets/mimico/transforma/Orc_Hurt.png" id="10_0j0dk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enjmk"]
+atlas = ExtResource("7_oek3q")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnh2m"]
+atlas = ExtResource("7_oek3q")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hikbh"]
+atlas = ExtResource("7_oek3q")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6a2x"]
+atlas = ExtResource("7_oek3q")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56cy7"]
+atlas = ExtResource("7_oek3q")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_je1hg"]
+atlas = ExtResource("7_oek3q")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8535i"]
+atlas = ExtResource("8_uh0fs")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8ss5"]
+atlas = ExtResource("8_uh0fs")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udt0s"]
+atlas = ExtResource("8_uh0fs")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alh6s"]
+atlas = ExtResource("8_uh0fs")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usmsi"]
+atlas = ExtResource("8_uh0fs")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4l7j"]
+atlas = ExtResource("8_uh0fs")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ghln"]
+atlas = ExtResource("8_uh0fs")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oe7pg"]
+atlas = ExtResource("8_uh0fs")
+region = Rect2(700, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3k3fu"]
+atlas = ExtResource("9_yjseg")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gahhj"]
+atlas = ExtResource("9_yjseg")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkhl6"]
+atlas = ExtResource("9_yjseg")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ao55i"]
+atlas = ExtResource("9_yjseg")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsts7"]
+atlas = ExtResource("10_0j0dk")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jytnn"]
+atlas = ExtResource("10_0j0dk")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5o6xh"]
+atlas = ExtResource("10_0j0dk")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nv2df"]
+atlas = ExtResource("10_0j0dk")
+region = Rect2(100, 0, 100, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vpy8e"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_hdu6y")
+"texture": SubResource("AtlasTexture_enjmk")
 }, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnh2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hikbh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6a2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56cy7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_je1hg")
+}],
+"loop": 1,
+"name": &"ataca",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_8535i")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_r8ss5")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_udt0s")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_alh6s")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_usmsi")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_e4l7j")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_6ghln")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_oe7pg")
+}],
+"loop": 1,
+"name": &"camina",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_6f6h4")
 }, {
@@ -20,13 +160,47 @@ animations = [{
 "texture": ExtResource("3_jlrtd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_w4gr6")
+"texture": ExtResource("5_jg3mf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_jg3mf")
+"texture": ExtResource("4_w4gr6")
 }],
 "loop": 0,
-"name": &"Bicho_default",
+"name": &"mimico_objetos",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_3k3fu")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_gahhj")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_jkhl6")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_ao55i")
+}],
+"loop": 0,
+"name": &"muere",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_qsts7")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_jytnn")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_5o6xh")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_nv2df")
+}],
+"loop": 1,
+"name": &"transforma",
 "speed": 5.0
 }]
 
@@ -36,12 +210,15 @@ radius = 15.0
 [node name="Mimico" type="CharacterBody2D" unique_id=338782264]
 script = ExtResource("1_6f6h4")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=762316541]
+[node name="Animacion_mimico" type="AnimatedSprite2D" parent="." unique_id=1329762695]
+position = Vector2(0, -1)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_vpy8e")
-animation = &"Bicho_default"
+animation = &"transforma"
+autoplay = "camina"
 
-[node name="AreaMimico" type="Area2D" parent="." unique_id=434166022 groups=["Mimico"]]
+[node name="Area_Mimico" type="Area2D" parent="." unique_id=434166022 groups=["Mimico"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaMimico" unique_id=283617074]
+[node name="Colision_Mimico" type="CollisionShape2D" parent="Area_Mimico" unique_id=283617074]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_vq16u")
