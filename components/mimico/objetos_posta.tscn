@@ -5,10 +5,38 @@
 [ext_resource type="Texture2D" uid="uid://dyebonge3niyd" path="res://assets/items/niveles/Paja chica.png" id="2_f6gi3"]
 [ext_resource type="Texture2D" uid="uid://bwdq0scqny0f4" path="res://assets/items/niveles/Paja grande.png" id="3_oulb8"]
 [ext_resource type="Texture2D" uid="uid://bjatsxof84i4a" path="res://assets/items/niveles/Yunque.png" id="4_va73i"]
+[ext_resource type="Texture2D" uid="uid://dwr2ou0si5to1" path="res://assets/items/niveles/Halloween_Items_Pack_FREE-32x32.png" id="6_txrod"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cihrc"]
+atlas = ExtResource("6_txrod")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpnun"]
+atlas = ExtResource("6_txrod")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylg0r"]
+atlas = ExtResource("6_txrod")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfdyf"]
+atlas = ExtResource("6_txrod")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmor2"]
+atlas = ExtResource("6_txrod")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txrod"]
+atlas = ExtResource("6_txrod")
+region = Rect2(128, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vpy8e"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_va73i")
+}, {
 "duration": 1.0,
 "texture": ExtResource("3_oulb8")
 }, {
@@ -19,23 +47,49 @@ animations = [{
 "texture": ExtResource("1_x6grd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_va73i")
+"texture": SubResource("AtlasTexture_cihrc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpnun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylg0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfdyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmor2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txrod")
 }],
 "loop": 1,
 "name": &"Tipos_objetos_1",
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_vq16u"]
+radius = 15.033297
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vpy8e"]
 size = Vector2(44, 44)
 
-[node name="Objetos_posta" type="Area2D" unique_id=1509260846 groups=["Objetos"]]
+[node name="Objetos_posta" type="Node2D" unique_id=1214642302]
 script = ExtResource("1_f6gi3")
 
-[node name="Frames_objetos" type="AnimatedSprite2D" parent="." unique_id=500398021]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=71294843]
+
+[node name="Frames_objetos" type="AnimatedSprite2D" parent="StaticBody2D" unique_id=500398021]
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_vpy8e")
 animation = &"Tipos_objetos_1"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=484750140]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=809631511]
+shape = SubResource("CircleShape2D_vq16u")
+debug_color = Color(0.9014088, 0.00016306699, 0.7612454, 0.41960785)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2087176321 groups=["Objetos"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=484750140]
 shape = SubResource("RectangleShape2D_vpy8e")

@@ -1,7 +1,8 @@
-extends Area2D
+extends Node2D
+class_name Objetos_reales
 @export var tipo_objeto : int
-@onready var frames_objetos = $Frames_objetos
 #@export var numero_animacion: int = 1
+@onready var frames_objetos = $StaticBody2D/Frames_objetos
 
 func _physics_process(delta):
 	frames_objetos.frame = tipo_objeto

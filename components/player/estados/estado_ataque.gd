@@ -15,13 +15,14 @@ func _physics_process(delta):
 func proceso(_delta):
 		if Globales.durabilidad <= 0:
 			Globales.durabilidad = 0
-		Globales.objeto_destruido = false
-
+##Funcion donde el area de la espada detecta si el area entrante pertenece a los grupos globales de "Objetos" o "Mimico"
 func _on_area_espada_area_entered(area):
 	if area.is_in_group("Objetos"):
 		Globales.durabilidad -= 1
 		if Globales.durabilidad <= 0:
 			Globales.durabilidad = 0
+		area.get_parent().queue_free()
 		print(Globales.durabilidad)
+
 	if area.is_in_group("Mimico"):
 		Globales.enemigo_matado = true
