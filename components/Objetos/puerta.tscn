@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cmq8cf3khrkbn"]
+
+[ext_resource type="Texture2D" uid="uid://di5nruv43844j" path="res://assets/items/niveles/Puerta/1.png" id="1_j7fym"]
+[ext_resource type="Script" uid="uid://dl5ehpavh02r0" path="res://components/objetos/puerta.gd" id="1_jhwrp"]
+[ext_resource type="Texture2D" uid="uid://cmujgdtlp6e5s" path="res://assets/items/niveles/Puerta/2.png" id="2_jhwrp"]
+[ext_resource type="Texture2D" uid="uid://djqwv5pph6bdv" path="res://assets/items/niveles/Puerta/3.png" id="3_ufe7m"]
+[ext_resource type="Texture2D" uid="uid://bmf4l2vtsr30i" path="res://assets/items/niveles/Puerta/4.png" id="4_sqt4w"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vq16u"]
+animations = [{
+"frames": [{
+"duration": 0.6,
+"texture": ExtResource("1_j7fym")
+}, {
+"duration": 0.6,
+"texture": ExtResource("2_jhwrp")
+}, {
+"duration": 0.6,
+"texture": ExtResource("3_ufe7m")
+}, {
+"duration": 0.6,
+"texture": ExtResource("4_sqt4w")
+}],
+"loop": 0,
+"name": &"Moviendose",
+"speed": 5.0
+}]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vq16u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5vyj"]
+size = Vector2(24, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpy8e"]
+size = Vector2(23.5, 18)
+
+[node name="puerta" type="Node2D" unique_id=102097908]
+script = ExtResource("1_jhwrp")
+
+[node name="sprite_Puerta" type="AnimatedSprite2D" parent="." unique_id=1774694648]
+position = Vector2(-1.1175871e-08, -14.000004)
+scale = Vector2(0.746875, 0.746875)
+sprite_frames = SubResource("SpriteFrames_vq16u")
+animation = &"Moviendose"
+
+[node name="cuerpo_Puerta" type="StaticBody2D" parent="." unique_id=1922583410]
+physics_material_override = SubResource("PhysicsMaterial_vq16u")
+
+[node name="colision_Puerta" type="CollisionShape2D" parent="cuerpo_Puerta" unique_id=310020742]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(0, -8.5)
+shape = SubResource("RectangleShape2D_b5vyj")
+debug_color = Color(0.9056717, 0.00013457358, 0.74755704, 0.41960785)
+
+[node name="area_Puerta" type="Area2D" parent="." unique_id=939904627]
+
+[node name="colision_Area_Puerta" type="CollisionShape2D" parent="area_Puerta" unique_id=207312032]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(0.25, 21)
+shape = SubResource("RectangleShape2D_vpy8e")
+
+[connection signal="area_entered" from="area_Puerta" to="." method="_on_area_puerta_area_entered"]
