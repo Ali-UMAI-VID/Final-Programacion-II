@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ywishfuwvfsi"
-path="res://.godot/imported/Velas apagadas.png-b103ff86a2ed3fdb216fc6ac6d6167c0.ctex"
+uid="uid://5r0er2g3xe5i"
+path="res://.godot/imported/Dungeon_24x24.png-78b9542706ee88a725a8409c5866f05e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/items/niveles/Velas apagadas.png"
-dest_files=["res://.godot/imported/Velas apagadas.png-b103ff86a2ed3fdb216fc6ac6d6167c0.ctex"]
+source_file="res://assets/tileset/Dungeon_24x24.png"
+dest_files=["res://.godot/imported/Dungeon_24x24.png-78b9542706ee88a725a8409c5866f05e.ctex"]
 
 [params]
 

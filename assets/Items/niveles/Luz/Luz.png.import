@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwr2ou0si5to1"
-path="res://.godot/imported/Halloween_Items_Pack_FREE-32x32.png-a202812e475137d4552df30251c7faae.ctex"
+uid="uid://ya5t5734mjx2"
+path="res://.godot/imported/Luz.png-75dd8038cc00a0a64b2c15f68044d0f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/items/niveles/Halloween_Items_Pack_FREE-32x32.png"
-dest_files=["res://.godot/imported/Halloween_Items_Pack_FREE-32x32.png-a202812e475137d4552df30251c7faae.ctex"]
+source_file="res://assets/items/niveles/Luz/Luz.png"
+dest_files=["res://.godot/imported/Luz.png-75dd8038cc00a0a64b2c15f68044d0f1.ctex"]
 
 [params]
 
