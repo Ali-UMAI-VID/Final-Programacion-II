@@ -7,8 +7,7 @@ func _physics_process(delta):
 	if Globales.enemigo == 1:
 		animacion_mimico.animation = "mimico_objetos"
 		animacion_mimico.frame = 4
-		set_scale(Vector2(0.2,0.2))
+		set_scale(Vector2(0.7,0.7))
 	
 	if Globales.enemigo_matado == true:
 		queue_free()
-		Globales.enemigo_matado = false

@@ -26,3 +26,4 @@ func _on_area_espada_area_entered(area):
 
 	if area.is_in_group("Mimico"):
 		Globales.enemigo_matado = true
+		print("si mato enemigo")

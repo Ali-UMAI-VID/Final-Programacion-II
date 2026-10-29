@@ -9,6 +9,10 @@
 [ext_resource type="Script" uid="uid://th3wjdy7ypmn" path="res://components/player/estados/estado_normal.gd" id="39_tye5j"]
 [ext_resource type="Script" uid="uid://dk6wfyj35mb2s" path="res://components/player/estados/estado_ataque.gd" id="40_ycu61"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vq16u"]
+radius = 4.7999997
+height = 17.599998
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_16fba"]
 atlas = ExtResource("2_bv0o5")
 region = Rect2(0, 0, 100, 100)
@@ -200,17 +204,22 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vq16u"]
-radius = 4.7999997
-height = 17.599998
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_c62y7"]
-radius = 80.399
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p5c3r"]
+radius = 36.0
+height = 80.0
 
 [node name="jugador" type="CharacterBody2D" unique_id=113463032 node_paths=PackedStringArray("sprite")]
 scale = Vector2(0.25, 0.25)
 script = ExtResource("1_l4t1l")
 sprite = NodePath("AnimacionJugador")
+
+[node name="Area_jugador" type="Area2D" parent="." unique_id=1775557232 groups=["Jugador"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_jugador" unique_id=783686667]
+position = Vector2(0, -3.9999998)
+scale = Vector2(5, 5)
+shape = SubResource("CapsuleShape2D_vq16u")
+debug_color = Color(0.9564633, 0, 0.5403765, 0.41960785)
 
 [node name="AnimacionJugador" type="AnimatedSprite2D" parent="." unique_id=1650606929]
 scale = Vector2(5, 5)
@@ -241,9 +250,9 @@ script = ExtResource("40_ycu61")
 [node name="Area_Espada" type="Area2D" parent="." unique_id=977036717 groups=["Espada"]]
 
 [node name="Colision_Espada" type="CollisionShape2D" parent="Area_Espada" unique_id=1839350439]
-position = Vector2(108, 0)
+position = Vector2(64, 0)
 rotation = 1.5707964
-shape = SubResource("CircleShape2D_c62y7")
+shape = SubResource("CapsuleShape2D_p5c3r")
 debug_color = Color(0.66230726, 0.5138641, 1.92523e-07, 0.41960785)
 
 [connection signal="area_entered" from="Area_Espada" to="MaquinaEstado/EstadoAtaque" method="_on_area_espada_area_entered"]

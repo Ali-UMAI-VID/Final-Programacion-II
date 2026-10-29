@@ -5,7 +5,7 @@ class_name Player
 var movimiento_lateral_activado : bool = true
 @export var velocidad : float = 200
 @onready var maquina : MaquinaEstado = get_node("MaquinaEstado")
-@onready var colision_espada:CollisionShape2D = $Area_Espada/Colision_Espada
+@onready var colision_espada = $Area_Espada/Colision_Espada
 
 func _physics_process(delta):
 	if movimiento_lateral_activado:
@@ -21,11 +21,11 @@ func _physics_process(delta):
 		if direction.x < 0:
 			#sprite.play("caminando")
 			sprite.flip_h = true
-			colision_espada.position.x = -108
+			colision_espada.position.x = -64
 		elif direction.x > 0:
 			#sprite.play("caminando")
 			sprite.flip_h = false
-			colision_espada.position.x = 108
+			colision_espada.position.x = 64
 		#if direction.y < 0:
 		#	sprite.play("caminando")
 		#elif direction.y > 0:

@@ -7,6 +7,7 @@ extends Node2D
 @export var velo_mimico = 150
 var ene_principio = false
 func _ready():
+	Globales.estado_nivel = 1
 	Globales.apagar_luz_sala = true
 	ene_principio = true
 	await animacion_sala_luz.animation_finished
