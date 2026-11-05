@@ -30,8 +30,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_p5c3r"]
+radius = 375.048
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_vq16u"]
-radius = 202.02228
+radius = 137.78607
 
 [node name="Velas" type="StaticBody2D" unique_id=1787696315]
 collision_layer = 3
@@ -49,7 +52,8 @@ color = Color(0.9421946, 0.729692, 0.26299804, 1)
 texture = ExtResource("1_n3tan")
 
 [node name="Punto de luz" type="PointLight2D" parent="." unique_id=526681638]
-scale = Vector2(1.1835938, 1.1809099)
+position = Vector2(-7.6293945e-06, 3.0000076)
+scale = Vector2(3.0185547, 3.0117102)
 color = Color(0.9421946, 0.729692, 0.26299804, 1)
 texture = ExtResource("1_n3tan")
 
@@ -64,7 +68,15 @@ position = Vector2(0, 30)
 
 [node name="Colision_area_luz" type="CollisionShape2D" parent="Area_luz" unique_id=201592330]
 position = Vector2(0, -30)
+shape = SubResource("CircleShape2D_p5c3r")
+
+[node name="Area_antorcha" type="Area2D" parent="." unique_id=1967465093]
+
+[node name="Colision_area_antorcha" type="CollisionShape2D" parent="Area_antorcha" unique_id=567794412]
+position = Vector2(4, 0)
 shape = SubResource("CircleShape2D_vq16u")
 
 [connection signal="area_entered" from="Area_luz" to="." method="_on_area_luz_area_entered"]
 [connection signal="area_exited" from="Area_luz" to="." method="_on_area_luz_area_exited"]
+[connection signal="area_entered" from="Area_antorcha" to="." method="_on_area_antorcha_area_entered"]
+[connection signal="area_exited" from="Area_antorcha" to="." method="_on_area_antorcha_area_exited"]

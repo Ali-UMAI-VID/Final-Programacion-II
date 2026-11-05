@@ -1,57 +1,52 @@
 extends Node2D
-class_name nivel
-@onready var animacion_sala_luz : AnimationPlayer = $AnimacionSalaLuz
+class_name Nivel
+
+signal nivel_cambiado
+
+@onready var animacion_sala_luz = $Animacion_Sala_Luz
+@onready var gameplay_niveles = $"."
+@onready var camera_sala_jug: Camera2D = $Jugador/Camera_Sala_jug
 @onready var jugador = $Jugador
-@onready var camera_sala_jug: Camera2D = $Jugador/CameraSala_jug
-@onready var niveles = $"."
 
-
-#@onready var mimico = $Mimico
-#@export var velo_mimico = 150
-var cambio_posicion_camara = false
+## Función que se ejecuta una solo vez al principio de la escena
 func _ready():
-	cambio_posicion_camara = true
-	_sala_luz()
-	Globales.animacion_sala = false
+	Globales.nodo_nivel = self
+	Globales.animacion_sala = animacion_sala_luz
+	print(Globales.nodo_nivel)
 	Globales.estado_nivel += 1
+	pasaje_de_nivel()
 
-func _process(delta):
-	#print(Globales.animacion_sala)
-	if Globales.animacion_sala == true and cambio_posicion_camara == true:
-		_sala_luz()
-		cambio_posicion_camara = false
-
-
-func _sala_luz():
-	
+## Funcion que se ejecuta cuando hay un cambio de nivel
+func pasaje_de_nivel():
+	nivel_cambiado.emit()
 	if Globales.estado_nivel == 1:
 		camera_sala_jug.position.y -= 363.0
 	if Globales.estado_nivel == 2:
 		camera_sala_jug.position.y -= 1300.0
 	if Globales.estado_nivel == 3:
-		camera_sala_jug.position.y -= 2300.0
+		camera_sala_jug.position.y -= 1350.0
 	if Globales.estado_nivel == 4:
 		camera_sala_jug.position.y -= 3300.0
+
 		
 	camera_sala_jug.position.x = 1315.0
 	animacion_sala_luz.play("Animacion_luz_inicial")
-	camera_sala_jug.reparent(niveles)
+	camera_sala_jug.reparent(gameplay_niveles)
 	camera_sala_jug.zoom.x = 1
 	camera_sala_jug.zoom.y = 1
-	print(camera_sala_jug.position.x)
-	print(camera_sala_jug.position.y)
+	#print(camera_sala_jug.position.x)
+	#print(camera_sala_jug.position.y)
 	Globales.movimiento_lateral_activado = false
-	Globales.apagar_luz_sala = true
-	Globales.movimientoEnemigo = true
+	
+	#Globales.apagar_luz_sala = true
 	
 	await animacion_sala_luz.animation_finished
-	Globales.apagar_luz_sala = false
+	
 	camera_sala_jug.reparent(jugador)
 	camera_sala_jug.position.x = 0
 	camera_sala_jug.position.y = 0
 	camera_sala_jug.zoom.x = 3
 	camera_sala_jug.zoom.y = 3
-	Globales.movimientoEnemigo = false
 	Globales.movimiento_lateral_activado = true
-	#Globales.animacion_sala = false
+	
 	return

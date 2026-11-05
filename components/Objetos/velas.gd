@@ -17,10 +17,7 @@ func _physics_process(delta):
 		sprite_luz.frame = 2
 	if fuerza_antorcha > 0 and tipo_luz >= 2:
 		sprite_luz.frame = 3
-	#if Globales.apagar_luz_sala == true:
-	#	punto_de_luz.energy = 0
-	#if Globales.apagar_luz_sala == false:
-	#	punto_de_luz.energy += 1
+
 	#if punto_de_luz.energy >= 1.8:
 	#	punto_de_luz.energy = 1.8
 
@@ -32,12 +29,7 @@ func _on_area_luz_area_entered(area):
 			tween_luz.tween_property(self,"fuerza_vela",1.8,0.5)
 			if fuerza_vela >= 1.8:
 				fuerza_vela = 1.8
-		if tipo_luz == 2:
-			var tween_luz = create_tween()
-			tween_luz.set_trans(Tween.TRANS_CUBIC)
-			tween_luz.tween_property(self,"fuerza_antorcha",1.8,0.5)
-			if fuerza_antorcha >= 1.8:
-				fuerza_antorcha= 1.8
+
 
 func _on_area_luz_area_exited(area):
 	if area.is_in_group("Jugador"):
@@ -48,6 +40,21 @@ func _on_area_luz_area_exited(area):
 			if fuerza_vela <= 0:
 				fuerza_vela = 0
 				
+
+
+
+func _on_area_antorcha_area_entered(area):
+	if area.is_in_group("Jugador"):
+		if tipo_luz == 2:
+			var tween_luz = create_tween()
+			tween_luz.set_trans(Tween.TRANS_CUBIC)
+			tween_luz.tween_property(self,"fuerza_antorcha",1.8,0.5)
+			if fuerza_antorcha >= 1.8:
+				fuerza_antorcha= 1.8
+
+
+func _on_area_antorcha_area_exited(area):
+	if area.is_in_group("Jugador"):
 		if sprite_luz.frame == 3:
 			var tween_luz = create_tween()
 			tween_luz.set_trans(Tween.TRANS_CUBIC)

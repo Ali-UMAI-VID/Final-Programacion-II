@@ -3,7 +3,6 @@ class_name Estado
 
 @onready var maquina : MaquinaEstado = get_parent()
 
-
 func entrada():
 	pass
 	

@@ -272,7 +272,7 @@ script = ExtResource("1_6f6h4")
 position = Vector2(0, -5.9604645e-08)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_vpy8e")
-animation = &"mimico_objetos"
+animation = &"camina"
 autoplay = "camina"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1804174128]

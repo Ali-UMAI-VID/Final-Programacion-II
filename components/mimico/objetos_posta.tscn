@@ -108,7 +108,7 @@ radius = 17.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vpy8e"]
 size = Vector2(44, 44)
 
-[node name="Objetos_posta" type="Node2D" unique_id=1214642302]
+[node name="Objetos_Posta" type="Node2D" unique_id=1214642302]
 script = ExtResource("1_f6gi3")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=71294843]
