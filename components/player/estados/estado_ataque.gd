@@ -4,7 +4,7 @@ class_name EstadoAtaque
 @onready var area_espada : Area2D = $"../../Area_Espada"
 
 func entrada():
-	maquina.player.movimiento_lateral_activado = false
+	Globales.movimiento_lateral_activado = false
 	animacion_jugador.play("ataque")
 	await animacion_jugador.animation_finished
 	maquina.transcicionar("EstadoNormal")

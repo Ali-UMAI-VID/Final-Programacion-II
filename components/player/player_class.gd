@@ -2,13 +2,12 @@ extends Actor
 class_name Player
 
 @export var sprite : AnimatedSprite2D
-var movimiento_lateral_activado : bool = true
 @export var velocidad : float = 200
 @onready var maquina : MaquinaEstado = get_node("MaquinaEstado")
 @onready var colision_espada = $Area_Espada/Colision_Espada
 
 func _physics_process(delta):
-	if movimiento_lateral_activado:
+	if Globales.movimiento_lateral_activado:
 		direction = Input.get_vector(
 			"move_left",
 			"move_right",
