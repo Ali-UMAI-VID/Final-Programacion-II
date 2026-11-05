@@ -61,4 +61,13 @@ visibility_layer = 3
 position = Vector2(0.25, 21)
 shape = SubResource("RectangleShape2D_vpy8e")
 
+[node name="area_puerta_animacion_luz" type="Area2D" parent="." unique_id=144878623]
+
+[node name="colision_Area_Puerta" type="CollisionShape2D" parent="area_puerta_animacion_luz" unique_id=1592827250]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(0.25, -38)
+shape = SubResource("RectangleShape2D_vpy8e")
+
 [connection signal="area_entered" from="area_Puerta" to="." method="_on_area_puerta_area_entered"]
+[connection signal="area_entered" from="area_puerta_animacion_luz" to="." method="_on_area_puerta_animacion_luz_area_entered"]

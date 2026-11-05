@@ -1,15 +1,49 @@
 extends Node2D
+class_name nivel
 @onready var animacion_sala_luz : AnimationPlayer = $AnimacionSalaLuz
-@onready var camera_sala_jug: Camera2D = $CameraSala_jug
 @onready var jugador = $Jugador
+@onready var camera_sala_jug: Camera2D = $Jugador/CameraSala_jug
+@onready var niveles = $"."
 
-@onready var mimico = $Mimico
-@export var velo_mimico = 150
-var ene_principio = false
+
+#@onready var mimico = $Mimico
+#@export var velo_mimico = 150
+var cambio_posicion_camara = false
 func _ready():
-	Globales.estado_nivel = 1
+	cambio_posicion_camara = true
+	_sala_luz()
+	Globales.animacion_sala = false
+	Globales.estado_nivel += 1
+
+func _process(delta):
+	#print(Globales.animacion_sala)
+	if Globales.animacion_sala == true and cambio_posicion_camara == true:
+		_sala_luz()
+		cambio_posicion_camara = false
+
+
+func _sala_luz():
+	
+	if Globales.estado_nivel == 1:
+		camera_sala_jug.position.y -= 363.0
+	if Globales.estado_nivel == 2:
+		camera_sala_jug.position.y -= 1300.0
+	if Globales.estado_nivel == 3:
+		camera_sala_jug.position.y -= 2300.0
+	if Globales.estado_nivel == 4:
+		camera_sala_jug.position.y -= 3300.0
+		
+	camera_sala_jug.position.x = 1315.0
+	animacion_sala_luz.play("Animacion_luz_inicial")
+	camera_sala_jug.reparent(niveles)
+	camera_sala_jug.zoom.x = 1
+	camera_sala_jug.zoom.y = 1
+	print(camera_sala_jug.position.x)
+	print(camera_sala_jug.position.y)
+	Globales.movimiento_lateral_activado = false
 	Globales.apagar_luz_sala = true
-	ene_principio = true
+	Globales.movimientoEnemigo = true
+	
 	await animacion_sala_luz.animation_finished
 	Globales.apagar_luz_sala = false
 	camera_sala_jug.reparent(jugador)
@@ -17,19 +51,7 @@ func _ready():
 	camera_sala_jug.position.y = 0
 	camera_sala_jug.zoom.x = 3
 	camera_sala_jug.zoom.y = 3
-	ene_principio = false
-	mimico.position= Vector2(973, 567)
-	Globales.enemigo = 1
-	#if animacion_sala_luz.animation_finished:
-		#animacion_sala_luz.play("SalaIluminado")
-		#camera_sala_jug.position.x = jugador.position.x
-		#camera_sala_jug.position.y = jugador.position.y
-		#jugador.add_child(camera_sala_jug)
-		#camera_sala_jug.zoom.x = 3
-		#camera_sala_jug.zoom.y = 3
-func _physics_process(delta):
-	var direction_enemigo: Vector2
-	if ene_principio == true:
-		direction_enemigo.y = 1
-		mimico.velocity = direction_enemigo * velo_mimico
-		mimico.move_and_slide()
+	Globales.movimientoEnemigo = false
+	Globales.movimiento_lateral_activado = true
+	#Globales.animacion_sala = false
+	return
